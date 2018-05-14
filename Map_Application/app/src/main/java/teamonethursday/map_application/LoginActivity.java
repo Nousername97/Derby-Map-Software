@@ -3,6 +3,8 @@ package teamonethursday.map_application;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -33,6 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
+import static android.R.attr.x;
 
 /**
  * A login screen that offers login via email/password.
@@ -66,6 +69,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        buttonClicked();
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -92,6 +96,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+    }
+    private void buttonClicked() {
+        Button test = (Button) findViewById(R.id.button2);
+        test.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent x;
+                x = new Intent(view.getContext(), HomeActivity.class);
+                startActivity(x);
+
+            }
+        });
     }
 
     private void populateAutoComplete() {
