@@ -23,8 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".HomeActivity"/>
         <activity android:name=".MapsActivity"/>
+=======
+        <activity android:name=".ImageDisplayActivity" />
+        <activity android:name=".MainActivity"></activity>
+>>>>>>> 81f7e0fe188e67d0d81b18459074a0af00f97a86
     </application>
 
 </manifest>

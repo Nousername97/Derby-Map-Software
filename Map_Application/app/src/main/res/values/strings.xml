@@ -13,4 +13,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <!-- Strings related to navigation -->
+    <string name="title_home">Home</string>
+    <string name="title_maps">Maps</string>
+    <string name="title_camera">Camera</string>
 </resources>
