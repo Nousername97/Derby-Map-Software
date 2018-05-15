@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.customlist.ImageDisplayActivity">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="384dp"
+            android:layout_height="288dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="59dp"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/tvTimestamp"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/tvTimestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:text="Timestamp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true" />
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/tvTimestamp"
+            android:text="Username" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="370dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/imageView"
+            android:text="Description"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="347dp" />
+
+        <TextView
+            android:id="@+id/tvComments"
+            android:layout_width="370dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tvDescription"
+            android:text="Comments"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="347dp" />
+
+    </RelativeLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
