@@ -15,19 +15,12 @@ import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
 
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class HomeActivity extends Activity {
-
 public class HomeActivity extends AppCompatActivity {
-
 
     Toolbar mToolbar;
     ListView mListView;
 
-    String[] uploadName = {"Bridge", "water"};
+    String[] uploaderName = {"Bridge", "water"};
     int[] pictureID = {
             R.drawable.bridge,
             R.drawable.waterfall};
@@ -37,19 +30,18 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        List<String> listContent = new ArrayList<String>();
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setTitle(getResources().getString(R.string.app_name));
         setSupportActionBar(mToolbar);
 
         mListView = (ListView) findViewById(R.id.listview);
-        MyAdapter myAdapter = new MyAdapter(HomeActivity.this, uploadName, pictureID);
+        MyAdapter myAdapter = new MyAdapter(HomeActivity.this, uploaderName, pictureID);
         mListView.setAdapter(myAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent mIntent = new Intent(HomeActivity.this, DetailActivity.class);
-                mIntent.putExtra("Uploader", uploadName[i]);
+                mIntent.putExtra("Uploader", uploaderName[i]);
                 mIntent.putExtra("Picture ID", pictureID[i]);
                 startActivity(mIntent);
             }

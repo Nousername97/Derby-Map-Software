@@ -20,8 +20,8 @@ public class DetailActivity extends AppCompatActivity {
 
         Bundle mBundle = getIntent().getExtras();
         if (mBundle != null) {
-            mToolbar.setTitle(mBundle.getString("countryName"));
-            mImageView.setImageResource(mBundle.getInt("countryFlag"));
+            mToolbar.setTitle(mBundle.getString("Uploader"));
+            mImageView.setImageResource(mBundle.getInt("Picture ID"));
         }
     }
 }
