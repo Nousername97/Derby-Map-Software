@@ -15,14 +15,14 @@ import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
 
-<<<<<<< HEAD
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends Activity {
-=======
+
 public class HomeActivity extends AppCompatActivity {
->>>>>>> 055d5451cad4c829d0559aa7fba9f84ded0dddd3
+
 
     Toolbar mToolbar;
     ListView mListView;
