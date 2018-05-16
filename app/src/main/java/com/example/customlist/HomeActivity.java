@@ -8,12 +8,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HomeActivity extends Activity {
 
     Toolbar mToolbar;
     ListView mListView;
 
-    String[] uploaderName = {"Bridge", "water"};
+    String[] uploadName = {"Bridge", "water"};
     int[] pictureID = {
             R.drawable.bridge,
             R.drawable.waterfall};
@@ -23,16 +26,17 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        List<String> listContent = new ArrayList<String>();
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setTitle(getResources().getString(R.string.app_name));
         mListView = (ListView) findViewById(R.id.listview);
-        MyAdapter myAdapter = new MyAdapter(HomeActivity.this, uploaderName, pictureID);
+        MyAdapter myAdapter = new MyAdapter(HomeActivity.this, uploadName, pictureID);
         mListView.setAdapter(myAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent mIntent = new Intent(HomeActivity.this, DetailActivity.class);
-                mIntent.putExtra("Uploader", uploaderName[i]);
+                mIntent.putExtra("Uploader", uploadName[i]);
                 mIntent.putExtra("Picture ID", pictureID[i]);
                 startActivity(mIntent);
             }

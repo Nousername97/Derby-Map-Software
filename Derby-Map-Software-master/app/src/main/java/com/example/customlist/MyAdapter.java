@@ -11,11 +11,9 @@ import android.widget.TextView;
 
 public class MyAdapter extends ArrayAdapter<String> {
 
-
     String[] names;
     int[] flags;
     Context mContext;
-
 
     public MyAdapter(Context context, String[] countryNames, int[] countryFlags) {
         super(context, R.layout.listview_item);
