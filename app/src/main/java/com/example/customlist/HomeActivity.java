@@ -3,12 +3,19 @@ package com.example.customlist;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
-public class HomeActivity extends Activity {
+
+public class HomeActivity extends AppCompatActivity {
 
     Toolbar mToolbar;
     ListView mListView;
@@ -25,6 +32,8 @@ public class HomeActivity extends Activity {
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setTitle(getResources().getString(R.string.app_name));
+        setSupportActionBar(mToolbar);
+
         mListView = (ListView) findViewById(R.id.listview);
         MyAdapter myAdapter = new MyAdapter(HomeActivity.this, uploaderName, pictureID);
         mListView.setAdapter(myAdapter);
@@ -37,5 +46,29 @@ public class HomeActivity extends Activity {
                 startActivity(mIntent);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.navigation_home:
+                Toast.makeText(this, "Home clicked",
+                        Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.navigation_camera:
+                Toast.makeText(this, "Camera clicked",
+                        Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.navigation, menu);
+
+        return true;
     }
 }
