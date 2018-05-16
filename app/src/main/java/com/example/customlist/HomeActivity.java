@@ -13,8 +13,8 @@ public class HomeActivity extends Activity {
     Toolbar mToolbar;
     ListView mListView;
 
-    String[] countryNames = {"Bridge", "water"};
-    int[] countryFlags = {
+    String[] uploaderName = {"Bridge", "water"};
+    int[] pictureID = {
             R.drawable.bridge,
             R.drawable.waterfall};
 
@@ -26,14 +26,14 @@ public class HomeActivity extends Activity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setTitle(getResources().getString(R.string.app_name));
         mListView = (ListView) findViewById(R.id.listview);
-        MyAdapter myAdapter = new MyAdapter(HomeActivity.this, countryNames, countryFlags);
+        MyAdapter myAdapter = new MyAdapter(HomeActivity.this, uploaderName, pictureID);
         mListView.setAdapter(myAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent mIntent = new Intent(HomeActivity.this, DetailActivity.class);
-                mIntent.putExtra("countryName", countryNames[i]);
-                mIntent.putExtra("countryFlag", countryFlags[i]);
+                mIntent.putExtra("Uploader", uploaderName[i]);
+                mIntent.putExtra("Picture ID", pictureID[i]);
                 startActivity(mIntent);
             }
         });
