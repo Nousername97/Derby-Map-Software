@@ -20,10 +20,15 @@ public class HomeActivity extends AppCompatActivity {
     Toolbar mToolbar;
     ListView mListView;
 
-    String[] uploaderName = {"Bridge", "water"};
+    // hardcoded data
+    String[] uploaderName = {"Bridge", "Water"};
     int[] pictureID = {
             R.drawable.bridge,
             R.drawable.waterfall};
+    String[] description = {"Wooden bridge with trees next to x location",
+                            "Waterfall picture with leaves"};
+    String[] username = {"jeff420", "anotherJeff"};
+    String[] timestamp = {"16/05/2018", "16/05/2018"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +40,18 @@ public class HomeActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
 
         mListView = (ListView) findViewById(R.id.listview);
-        MyAdapter myAdapter = new MyAdapter(HomeActivity.this, uploaderName, pictureID);
+        MyAdapter myAdapter = new MyAdapter(HomeActivity.this, uploaderName, pictureID, username, timestamp);
         mListView.setAdapter(myAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent mIntent = new Intent(HomeActivity.this, DetailActivity.class);
+                // pass the title, image, description, username, time
                 mIntent.putExtra("Uploader", uploaderName[i]);
                 mIntent.putExtra("Picture ID", pictureID[i]);
+                mIntent.putExtra("Description", description[i]);
+                mIntent.putExtra("Username", username[i]);
+                mIntent.putExtra("Timestamp", timestamp[i]);
                 startActivity(mIntent);
             }
         });
