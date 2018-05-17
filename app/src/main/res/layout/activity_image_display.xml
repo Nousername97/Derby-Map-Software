@@ -37,6 +37,7 @@
                 android:layout_above="@+id/imageViewMap"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="16dp"
+                android:textColor="@color/colorAccent"
                 android:text="Nature walk across Markeaton park to campus"
                 android:textStyle="bold" />
 
@@ -44,8 +45,9 @@
                 android:id="@+id/textView3"
                 android:layout_width="450dp"
                 android:layout_height="wrap_content"
-                android:text="A lovely nature walk starting in Markeaton Street university campus. On this walk you will see all kinds of fauna and
-                flora common to Markeaton Park alongside the primary feature chavs shooting up on benches."
+                android:textColor="@color/colorAccent"
+                android:text="A lovely nature walk starting in Markeaton Street university campus. On this walk you will see all kinds of nature and
+                creatures. At the lake there will be many birds such as ducks."
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
